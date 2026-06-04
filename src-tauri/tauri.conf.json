@@ -28,7 +28,7 @@
   "plugins": {
     "updater": {
       "endpoints": [
-        "https://github.com/OWNER/subscription-tracker/releases/latest/download/latest.json"
+        "https://github.com/MenozziTechGroup/subscription-tracker/releases/latest/download/latest.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEU5OTM2MEY1MzU4NUVGRkMKUldUODc0VTE5V0NUNmF5WmRkNWErVXBFQ2xXd1RldWhkRzBCRU9xcnl3VnVyR05jcWtROVBTZkMK"
     }
