@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { exportJSON, exportCSV, pickJSONFile, importJSON } from '../data/backup'
 import { CURRENCIES, DEFAULT_RATES } from '../data/currency'
 import { isTauri } from '../data/db'
@@ -6,6 +6,17 @@ import { isTauri } from '../data/db'
 export default function SettingsPanel({ clients, baseCurrency, rates, onSaveCurrency, onCheckUpdates, onClose, onImported }) {
   const [updateMsg, setUpdateMsg] = useState('')
   const [checking, setChecking] = useState(false)
+  const [appVersion, setAppVersion] = useState('')
+
+  useEffect(() => {
+    if (!isTauri()) return
+    ;(async () => {
+      try {
+        const { getVersion } = await import('@tauri-apps/api/app')
+        setAppVersion(await getVersion())
+      } catch { /* ignore */ }
+    })()
+  }, [])
 
   async function handleCheckUpdates() {
     setChecking(true); setUpdateMsg('')
@@ -142,6 +153,10 @@ export default function SettingsPanel({ clients, baseCurrency, rates, onSaveCurr
               </div>
             </>
           )}
+
+          <p className="text-center text-xs text-gray-300 pt-2">
+            MITS SubTracker{appVersion ? ` v${appVersion}` : ''}
+          </p>
         </div>
       </div>
 
