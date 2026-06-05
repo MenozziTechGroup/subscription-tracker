@@ -87,16 +87,16 @@ export default function SettingsPanel({ clients, baseCurrency, rates, onSaveCurr
               {CURRENCIES.map((c) => <option key={c}>{c}</option>)}
             </select>
             <p className="text-xs text-gray-400 mb-2">Exchange rates (value of 1 unit in USD)</p>
-            <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2 mb-3">
               {CURRENCIES.map((c) => (
-                <div key={c} className="flex items-center gap-2">
-                  <span className="text-sm text-gray-600 w-10">{c}</span>
+                <div key={c} className="flex items-center gap-2 min-w-0">
+                  <span className="text-sm text-gray-600 w-9 flex-shrink-0">{c}</span>
                   <input
                     type="number" step="0.0001" min="0"
                     value={rateDraft[c]}
                     disabled={c === 'USD'}
                     onChange={(e) => setRateDraft((d) => ({ ...d, [c]: e.target.value }))}
-                    className="flex-1 border border-gray-200 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 disabled:bg-gray-50 disabled:text-gray-400"
+                    className="w-full min-w-0 border border-gray-200 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 disabled:bg-gray-50 disabled:text-gray-400"
                   />
                 </div>
               ))}

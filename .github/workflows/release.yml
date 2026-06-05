@@ -47,6 +47,6 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: 'MITS SubTracker ${{ github.ref_name }}'
-          releaseBody: 'Download the installer below. Existing installs will auto-update.'
+          releaseBody: 'Improvements and fixes. Installed apps will update automatically.'
           releaseDraft: true
           prerelease: false
