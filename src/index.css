@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  /* App background — soft cool slate; makes the warm MITS red pop */
+  --app-bg: #e1eae9;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,7 +12,7 @@
 body {
   margin: 0;
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-  background: #f8f8fb;
+  background: var(--app-bg);
   color: #1a1a2e;
   -webkit-font-smoothing: antialiased;
 }

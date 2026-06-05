@@ -321,7 +321,7 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#f4f4f8' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--app-bg)' }}>
         <div className="text-center">
           <img src="/mits-logo.svg" alt="MITS" className="h-8 mx-auto mb-4 opacity-80" />
           <p className="text-sm text-gray-400">Loading…</p>
@@ -331,7 +331,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#f4f4f8' }}>
+    <div className="min-h-screen" style={{ background: 'var(--app-bg)' }}>
       {/* Header */}
       <header className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 gap-4">
